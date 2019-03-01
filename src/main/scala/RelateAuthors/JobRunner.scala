@@ -16,8 +16,8 @@ object JobRunner {
     val logger: Logger = LoggerFactory.getLogger(this.getClass)
     val configuration = new Configuration
     val conf = ConfigFactory.load("InputFormat")
-    configuration.set("xmlinput.start", conf.getString("START_TAGS"))
-    configuration.set("xmlinput.end", conf.getString("END_TAGS"))
+    configuration.set("xmlinput.start", conf.getString("START_TAG"))
+    configuration.set("xmlinput.end", conf.getString("END_TAG"))
     configuration.set(
       "io.serializations",
       "org.apache.hadoop.io.serializer.JavaSerialization,org.apache.hadoop.io.serializer.WritableSerialization");

@@ -8,6 +8,7 @@ lazy val commonSettings = Seq(
   organization := "MohammedSiddiq.HW3",
   version := "0.1.0-SNAPSHOT"
 )
+javacOptions ++= Seq("-source", "1.8", "-target", "1.8")
 lazy val app = (project in file(".")).
   settings(commonSettings: _*).
   settings(

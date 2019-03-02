@@ -17,9 +17,9 @@ class MyReducer extends Reducer[Text, IntWritable, Text, IntWritable] {
   override def reduce(key: Text, values: lang.Iterable[IntWritable], context: Reducer[Text, IntWritable, Text, IntWritable]#Context): Unit = {
 
     val sum = values.asScala.foldLeft(0)(_ + _.get)
-    print("Reducer writing : ", key, new IntWritable(sum))
+//    print("Reducer writing : ", key, new IntWritable(sum))
     logger.info("writing Key: ", key)
-    logger.debug("writing Key: ", key)
+//    logger.debug("writing Key: ", key)
     context.write(key, new IntWritable(sum))
   }
 }

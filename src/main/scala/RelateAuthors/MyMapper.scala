@@ -1,5 +1,7 @@
 package RelateAuthors
 
+import com.typesafe.config.ConfigFactory
+import org.apache.hadoop.conf.Configuration
 import org.apache.hadoop.io._
 import org.apache.hadoop.mapreduce.Mapper
 import org.slf4j.{Logger, LoggerFactory}
@@ -21,14 +23,20 @@ class MyMapper extends Mapper[LongWritable, Text, Text, IntWritable] {
     */
 
   val logger: Logger = LoggerFactory.getLogger(this.getClass)
+  val configuration = new Configuration
+  val conf = ConfigFactory.load("InputFormat")
+  val csProf = conf.getStringList("UIC_CS_PROFESSORS")
+  val dtdFilePath = getClass.getClassLoader.getResource("dblp.dtd").toURI
+  val one = new IntWritable(1)
+
 
   def processXML(xml: String): List[String] = {
-//    print("The XMl for this mapper :" xml)
-    logger.info("The XMl for this mapper : " +  xml)
-//    logger.debug("The XMl for this mapper : " + xml)
-    val csProf = List("Balajee Vamanan", "John Bell", "Isabel Cruz", "Bhaskar DasGupta", "Cody Cranch", "Nasim Mobasheri", "Piotr Gmytrasiewicz", "Ugo Buy", "Peter Nelson", "Robert Sloan", "Mark Grechanik", "V. N. Venkatakrishnan", "Anastasios Sidiropoulos", "Jon Solworth", "Elena Zheleva", "Lenore Zuck", "Chris Kanich", "Ajay Kshemkalyani", "Luc Renambot", "Brian Ziebart", "Prasad Sistla", "Gonzalo Bello", "Ian Kash", "Natalie Parde", "Xinhua Zhang", "Robert Kenyon", "Bing Liu", "Jason Polakis", "Evan McCarty", "Ouri Wolfson", "Cornelia Caragea", "Barbara Di Eugenio", "Philip S. Yu", "Emanuelle Burton", "G. Elisabeta Marai", "Andrew Johnson", "William Mansky", "Dale Reed", "Brent Stephens", "Scott Reckinger", "Joe Hummel", "Shanon Reckinger", "Patrick Troy", "Tanya Berger-Wolf", "David Hayes", "Xiaorui Sun", "Jakob Eriksson", "Xingbo Wu", "John Lillis", "Mitchell Theys", "Debaleena Chattopadhyay", "Daniel J. Bernstein").map(_.toLowerCase)
+    //    print("The XMl for this mapper :" xml)
+    logger.info("The XMl for this mapper : " + xml)
+    //    logger.debug("The XMl for this mapper : " + xml)
+//    val csProf = List("Balajee Vamanan", "John Bell", "Isabel Cruz", "Bhaskar DasGupta", "Cody Cranch", "Nasim Mobasheri", "Piotr Gmytrasiewicz", "Ugo Buy", "Peter Nelson", "Robert Sloan", "Mark Grechanik", "V. N. Venkatakrishnan", "Anastasios Sidiropoulos", "Jon Solworth", "Elena Zheleva", "Lenore Zuck", "Chris Kanich", "Ajay Kshemkalyani", "Luc Renambot", "Brian Ziebart", "Prasad Sistla", "Gonzalo Bello", "Ian Kash", "Natalie Parde", "Xinhua Zhang", "Robert Kenyon", "Bing Liu", "Jason Polakis", "Evan McCarty", "Ouri Wolfson", "Cornelia Caragea", "Barbara Di Eugenio", "Philip S. Yu", "Emanuelle Burton", "G. Elisabeta Marai", "Andrew Johnson", "William Mansky", "Dale Reed", "Brent Stephens", "Scott Reckinger", "Joe Hummel", "Shanon Reckinger", "Patrick Troy", "Tanya Berger-Wolf", "David Hayes", "Xiaorui Sun", "Jakob Eriksson", "Xingbo Wu", "John Lillis", "Mitchell Theys", "Debaleena Chattopadhyay", "Daniel J. Bernstein").map(_.toLowerCase)
     val proceedings = XML.loadString(xml)
-    logger.info("Authors for this mapper:", proceedings \\ "author")
+    logger.info("Authors for this mapper:" + proceedings \\ "author")
     val authors = (proceedings \\ "author").map(author => author.text.toLowerCase).toList
     authors filter csProf.contains
   }
@@ -60,8 +68,6 @@ class MyMapper extends Mapper[LongWritable, Text, Text, IntWritable] {
     // Process the XML and extract only the CS authors form the XML input.
 
 
-    val dtdFilePath = getClass.getClassLoader.getResource("dblp.dtd").toURI
-
     val xmlToProcess =
       s"""<?xml version="1.0" encoding="ISO-8859-1"?>
               <!DOCTYPE dblp SYSTEM "$dtdFilePath">
@@ -73,16 +79,15 @@ class MyMapper extends Mapper[LongWritable, Text, Text, IntWritable] {
 
     // Generate all pairs of authors
     val authorMappings = generateAuthorMapping(csAuthors)
-    val one = new IntWritable(1)
 
     // Mapper writing all pairs of CS authors working on the processed paper
     for (mapping <- authorMappings) {
-//      val aKey = new AuthorKey(new Text(mapping._1), new Text(mapping._2))
+      //      val aKey = new AuthorKey(new Text(mapping._1), new Text(mapping._2))
       //      println("writing Key: ", aKey)
-      logger.info("Generating keys:  ",mapping._1 +"-" + mapping._2)
-      context.write(new Text(mapping._1 +"-" + mapping._2), one)
-      context.write(new Text(mapping._1),one)
-      context.write(new Text(mapping._2),one)
+      logger.info("Generating keys:  ", mapping._1 + "-" + mapping._2)
+      context.write(new Text(mapping._1 + "-" + mapping._2), one)
+      context.write(new Text(mapping._1), one)
+      context.write(new Text(mapping._2), one)
     }
 
 

@@ -1,6 +1,6 @@
 package RelateAuthors
 
-import JHelpers.MyInputFormat
+import JHelpers.{MyInputFormat, XmlInputFormat}
 import com.typesafe.config.ConfigFactory
 import org.apache.hadoop.conf.Configuration
 import org.apache.hadoop.fs.Path
@@ -9,6 +9,8 @@ import org.apache.hadoop.mapreduce.Job
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat
 import org.slf4j.{Logger, LoggerFactory}
+
+import scala.xml.pull.XMLEvent
 
 object JobRunner {
 
@@ -25,7 +27,7 @@ object JobRunner {
     println("Entered here...")
     job.setJarByClass(this.getClass)
     job.setMapperClass(classOf[MyMapper])
-    job.setInputFormatClass(classOf[MyInputFormat])
+    job.setInputFormatClass(classOf[XmlInputFormat])
     job.setCombinerClass(classOf[MyReducer])
     job.setReducerClass(classOf[MyReducer])
     job.setOutputKeyClass(classOf[Text])

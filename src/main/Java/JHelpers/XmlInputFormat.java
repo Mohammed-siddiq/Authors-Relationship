@@ -111,7 +111,7 @@ public class XmlInputFormat extends TextInputFormat {
                 if (withinBlock) buffer.write(b);
 
                 // check if we're matching:
-                if (b == match[i]) { // or check for match with start_tag 2
+                if (b == match[i]) {
                     i++;
                     if (i >= match.length) return true;
                 } else i = 0;

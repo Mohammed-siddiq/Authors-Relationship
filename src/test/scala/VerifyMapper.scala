@@ -3,6 +3,11 @@ import com.typesafe.config.ConfigFactory
 import org.apache.hadoop.conf.Configuration
 import org.scalatest.FlatSpec
 
+
+/**
+  * Verifies the important units of Mapper
+  */
+
 class VerifyMapper extends FlatSpec {
 
   val authorMapper = new MyMapper
@@ -20,16 +25,12 @@ class VerifyMapper extends FlatSpec {
 
   }
 
-  "Conf loader" should "Load the confs from the conf" in {
 
-    val result = conf.getStringList("UIC_CS_PROFESSORS")
-    print(result)
-    assert(result != Nil)
+  "Generate author Mappings" should "Give the combination of authors" in {
+    val testAuthors = List("author1", "author2", "author3", "author4")
+    val mappings = authorMapper.generateAuthorMapping(testAuthors)
+    assert(mappings.length == 6)
   }
-
-
-
-  //  "Generate Author Mappers"
 
 
 }

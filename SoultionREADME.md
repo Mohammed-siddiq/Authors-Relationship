@@ -81,9 +81,9 @@ The sample output of the mapper would look like this :
           bhaskar dasgupta,ouri wolfson	5
           bhaskar dasgupta,robert h. sloan	2
           bhaskar dasgupta,tanya y. bergerwolf	12
+
      
-     
-     
+
 
 This final output directory of the reducers is given to the Graph Visualization tool written in graphviz to generate an PNG image representing friendship graph between professors. Individual nodes represent the CS faculty and the Edges between them represent the friendship(co-publishers).
 

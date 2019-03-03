@@ -4,6 +4,7 @@
 
 ##Steps to RUN on VM :
 
+- Run `sbt clean assembly` , which will run the test cases and run generate the JAR
 - Copy the jar on the machine.(Machine needs to have java 1.8)
 - Run the following command :
 

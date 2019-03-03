@@ -19,7 +19,11 @@ object JobRunner {
     val logger: Logger = LoggerFactory.getLogger(this.getClass)
     val configuration = new Configuration
     val conf = ConfigFactory.load("InputFormat")
+
+    //loading start tags
     configuration.set("xmlinput.start", conf.getString("START_TAGS"))
+
+    //loading end_tags
     configuration.set("xmlinput.end", conf.getString("END_TAGS"))
     configuration.set(
       "io.serializations",
@@ -27,14 +31,15 @@ object JobRunner {
     val job = Job.getInstance(configuration, "RelateAuthors")
     println("Entered here...")
     job.setJarByClass(this.getClass)
+    //Setting mapper
     job.setMapperClass(classOf[MyMapper])
     job.setInputFormatClass(classOf[XmlInputFormatWithMultipleTags])
     job.setCombinerClass(classOf[MyReducer])
+
+    //setting reducer
     job.setReducerClass(classOf[MyReducer])
     job.setOutputKeyClass(classOf[Text])
     job.setOutputValueClass(classOf[IntWritable])
-    //    println(args(0))
-    //    println(args(1))
     FileInputFormat.addInputPath(job, new Path(args(1)))
     FileOutputFormat.setOutputPath(job, new Path(args(2)))
     logger.debug("Setting up the Job conf....")

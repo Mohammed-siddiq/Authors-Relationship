@@ -53,40 +53,44 @@ END_TAGS
     
     The sample output of the mapper would look like this :
     
-      
-      .....
-      a. prasad sistla	130
-      a. prasad sistla,isabel f. cruz	2
-      a. prasad sistla,lenore d. zuck	7
-      a. prasad sistla,ouri wolfson	22
-      a. prasad sistla,robert h. sloan	1
-      a. prasad sistla,v. n. venkatakrishnan	8
-      ajay d. kshemkalyani	113
-      ajay d. kshemkalyani,ugo buy	1
-      anastasios sidiropoulos	101
-      anastasios sidiropoulos,bhaskar dasgupta	1
-      andrew e. johnson	102
-      andrew e. johnson,barbara di eugenio	2
-      andrew e. johnson,luc renambot	26
-      andrew e. johnson,tanya y. bergerwolf	1
-      balajee vamanan	15
-      barbara di eugenio	116
-      barbara di eugenio,bing liu	1
-      barbara di eugenio,brian d. ziebart	1
-      barbara di eugenio,isabel f. cruz	2
-      barbara di eugenio,luc renambot	1
-      barbara di eugenio,ouri wolfson	2
-      barbara di eugenio,peter c. nelson	3
-      bhaskar dasgupta	142
-      bhaskar dasgupta,nasim mobasheri	9
-      bhaskar dasgupta,ouri wolfson	5
-      bhaskar dasgupta,robert h. sloan	2
-      bhaskar dasgupta,tanya y. bergerwolf	12
-      ..........
+       
+          a. prasad sistla	130
+          a. prasad sistla,isabel f. cruz	2
+          a. prasad sistla,lenore d. zuck	7
+          a. prasad sistla,ouri wolfson	22
+          a. prasad sistla,robert h. sloan	1
+          a. prasad sistla,v. n. venkatakrishnan	8
+          ajay d. kshemkalyani	113
+          ajay d. kshemkalyani,ugo buy	1
+          anastasios sidiropoulos	101
+          anastasios sidiropoulos,bhaskar dasgupta	1
+          andrew e. johnson	102
+          andrew e. johnson,barbara di eugenio	2
+          andrew e. johnson,luc renambot	26
+          andrew e. johnson,tanya y. bergerwolf	1
+          balajee vamanan	15
+          barbara di eugenio	116
+          barbara di eugenio,bing liu	1
+          barbara di eugenio,brian d. ziebart	1
+          barbara di eugenio,isabel f. cruz	2
+          barbara di eugenio,luc renambot	1
+          barbara di eugenio,ouri wolfson	2
+          barbara di eugenio,peter c. nelson	3
+          bhaskar dasgupta	142
+          bhaskar dasgupta,nasim mobasheri	9
+          bhaskar dasgupta,ouri wolfson	5
+          bhaskar dasgupta,robert h. sloan	2
+          bhaskar dasgupta,tanya y. bergerwolf	12
+     
+     
+     
    
 
 
+
+
 This final output directory of the reducers is given to the Graph Visualization tool written in graphviz to generate an PNG image representing friendship graph between professors. Individual nodes represent the CS faculty and the Edges between them represent the friendship(co-publishers).
+
 The weights associated with the edges represent the number of times the they published together. The weights of the individual nodes represent the total number of publication of the author.
 
  [Link to GraphViz implementation to generate the DOT file from the output and present the graph](https://bitbucket.org/Iam_MohammedSiddiq/mohammed_siddiq_hw2_graphviz/src/master/)

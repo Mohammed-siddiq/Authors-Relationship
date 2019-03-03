@@ -43,8 +43,9 @@ END_TAGS
   
   _For example:_
   
-  suppose (a1,a2,a3) are authors of a paper then the mapper emits:
-    _(a1)->1,(a2)->1,(a3)->1,(a1,a2)->1,(a1,a3)->1,(a2,a3)->1_
+  suppose `(a1,a2,a3)` are authors of a paper then the mapper emits:
+    
+        (a1)->1,(a2)->1,(a3)->1,(a1,a2)->1,(a1,a3)->1,(a2,a3)->1
     
 - **_The Combiner and Reducer :_** 
     
@@ -52,7 +53,6 @@ END_TAGS
     
     The sample output of the mapper would look like this :
     
-      
       
       .....
       a. prasad sistla	130
@@ -84,6 +84,7 @@ END_TAGS
       bhaskar dasgupta,tanya y. bergerwolf	12
       ..........
    
+
 
 This final output directory of the reducers is given to the Graph Visualization tool written in graphviz to generate an PNG image representing friendship graph between professors. Individual nodes represent the CS faculty and the Edges between them represent the friendship(co-publishers).
 The weights associated with the edges represent the number of times the they published together. The weights of the individual nodes represent the total number of publication of the author.

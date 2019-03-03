@@ -7,7 +7,7 @@ import org.scalatest.FlatSpec
   * Verifying the configs loading and usage which would be used by the mappers and the job runner
   */
 
-class VerifyConfsLoading extends FlatSpec {
+class VerifyConfigLoading extends FlatSpec {
   val configuration = new Configuration
   val conf = ConfigFactory.load("InputFormat")
 

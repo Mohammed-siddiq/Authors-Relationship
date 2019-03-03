@@ -51,7 +51,7 @@ END_TAGS
     
     - The combiner and reducer adds all the corresponding values of the keys, thereby summing up all the number of publications of individual authors and the co-authors.
     
-    The sample output of the mapper would look like this :
+The sample output of the mapper would look like this :
     
        
           a. prasad sistla	130
@@ -84,10 +84,6 @@ END_TAGS
      
      
      
-   
-
-
-
 
 This final output directory of the reducers is given to the Graph Visualization tool written in graphviz to generate an PNG image representing friendship graph between professors. Individual nodes represent the CS faculty and the Edges between them represent the friendship(co-publishers).
 

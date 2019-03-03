@@ -94,7 +94,7 @@ The weights associated with the edges represent the number of times the they pub
  
 
  
- [And Finally the here's the link to the youtube](https://youtu.be/wea0r-EPSrY)
+ [And Finally here's the link to the youtube video](https://youtu.be/wea0r-EPSrY)
  
  
 

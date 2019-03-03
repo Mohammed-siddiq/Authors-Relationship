@@ -73,14 +73,16 @@ public class XmlInputFormatWithMultipleTags extends TextInputFormat {
         @Override
         public boolean nextKeyValue() throws IOException, InterruptedException {
             if (fsin.getPos() < end) {
+                //Changed here to perform readuntillmatch to all the tags
                 int res = readUntilMatch(startTags, false);
                 if (res != -1) { // Read until start_tag1 or start_tag2
                     try {
+
                         buffer.write(startTags[res - 1]);
-//                        logger.info("found match tag :", res);
+                        //Changed to read all the contents before the end tag
                         int res1 = readUntilMatch(endTags, true);
                         if (res1 != -1) { // changed here
-
+                            // updating the buffer with contents between start and end tags.
                             value.set(buffer.getData(), 0, buffer.getLength());
                             key.set(fsin.getPos());
                             return true;

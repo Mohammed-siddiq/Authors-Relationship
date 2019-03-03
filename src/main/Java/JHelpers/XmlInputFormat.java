@@ -15,6 +15,11 @@ import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
+
+/**
+ * Standard implementation of the XMLInputFormat that reads a single start and end tag
+ */
+
 public class XmlInputFormat extends TextInputFormat {
 
     public static final String START_TAG_KEY = "xmlinput.start";

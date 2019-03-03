@@ -8,6 +8,10 @@ import org.slf4j.{Logger, LoggerFactory}
 
 import scala.collection.JavaConverters._
 
+/**
+  * Reducer implementation that will just add the papers published by professors which is emitted by our Mapper.
+  * Writing the total number of papers associated with a professor/professors
+  */
 
 class MyReducer extends Reducer[Text, IntWritable, Text, IntWritable] {
 

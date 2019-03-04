@@ -16,7 +16,7 @@ hadoop jar Mohammed_Siddiq_HW3-assembly-0.1.jar RelateAuthors.JobRunner path/to/
 
 - Please refer the video uploaded on youtube to run the Job in on th cloud
  
-    [Link to Youtube Video](https://www.youtube.com/watch?v=Z-PoMjmT30o&feature=youtu.be)
+    [Link to Youtube Video](https://youtu.be/6OFhZpm7-6U)
 
 
 
@@ -95,7 +95,7 @@ The weights associated with the edges represent the number of times the they pub
  
 
  
- [And Finally here's the link to the youtube video](https://www.youtube.com/watch?v=Z-PoMjmT30o&feature=youtu.be)
+ [And Finally here's the link to the youtube video](https://youtu.be/6OFhZpm7-6U)
  
  
 

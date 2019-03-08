@@ -112,15 +112,17 @@ This final output directory of the reducers is given to the Graph Visualization 
 
 The weights associated with the edges represent the number of times the they published together. The weights of the individual nodes represent the total number of publication of the author.
 
- [Link to GraphViz implementation to generate the DOT file from the output and present the graph](https://bitbucket.org/Iam_MohammedSiddiq/mohammed_siddiq_hw2_graphviz/src/master/)
+ [Link to GraphViz implementation to generate the DOT file from the output and present the graph](https://github.com/Mohammed-siddiq/GraphViz-Implementation)
  
  
  
+ 
+ ## Graph generated representing the the entire UIC CS faculty researchers and thier work
  ![Graph of UIC CS faculty Researchers](https://github.com/Mohammed-siddiq/GraphViz-Implementation/blob/master/myoutput.png)
  
  
  
- [Sample output PNG representing the individual publications and friendship graph of the UIC](https://drive.google.com/file/d/10s2qEnf3xRBm78Q2qkmKgWktAP9KrC2K/view?usp=sharing) 
+ [Downlaadable PNG representing the individual publications and friendship graph of the UIC](https://github.com/Mohammed-siddiq/GraphViz-Implementation/blob/master/myoutput.png) 
  (Pro tip : Zoom in for the details.)
  
 

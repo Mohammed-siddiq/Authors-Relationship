@@ -116,7 +116,7 @@ The weights associated with the edges represent the number of times the they pub
  
  
  
- ![Graph of UIC CS faculty Researchers](https://drive.google.com/file/d/10s2qEnf3xRBm78Q2qkmKgWktAP9KrC2K/view?usp=sharing "Logo Title Text 1")
+ ![Graph of UIC CS faculty Researchers](https://github.com/Mohammed-siddiq/GraphViz-Implementation/blob/master/myoutput.png)
  
  
  

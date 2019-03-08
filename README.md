@@ -1,8 +1,33 @@
-## HomeWork 2 Solution
-### Mohammed Siddiq (msiddi56@uic.edu)
+
+## Description
+
+Created a map/reduce program for parallel processing of the [publically available DBLP dataset](https://dblp.uni-trier.de) that contains entries for various publications at many different venues (e.g., conferences and journals). Raw [XML-based DMBLP dataset](https://dblp.uni-trier.de/xml) is also publically available along with its schema and the documentation.
+
+Each entry in the dataset describes a publication, which contains the list of authors, the title, and the publication venue and a few other attributes. The file is approximately **2.5Gb**.
+
+Consider the following entry in the dataset.
+```xml
+<inproceedings mdate="2017-05-24" key="conf/icst/GrechanikHB13">
+<author>Mark Grechanik</author>
+<author>B. M. Mainul Hossain</author>
+<author>Ugo Buy</author>
+<title>Testing Database-Centric Applications for Causes of Database Deadlocks.</title>
+<pages>174-183</pages>
+<year>2013</year>
+<booktitle>ICST</booktitle>
+<ee>https://doi.org/10.1109/ICST.2013.19</ee>
+<ee>http://doi.ieeecomputersociety.org/10.1109/ICST.2013.19</ee>
+<crossref>conf/icst/2013</crossref>
+<url>db/conf/icst/icst2013.html#GrechanikHB13</url>
+</inproceedings>
+```
+
+This entry lists a paper at the IEEE International Conference on Software Testing, Verification and Validation (ICST) published in 2013 whose authors are my former Ph.D. student at UIC, now tenured Associate Professor at the University of Dhaka, Dr. B.M. Mainul Hussain whose advisor Mark Grechanik is a co-author on this paper. The third co-author is Prof.Ugo Buy, a faculty member at our CS department. The presence of two authors, Mark Grechanik and Ugo Buy in a single publication like this one establishes a connection between these faculty members. Your job is to create a "friendship" connectivity graph between UIC CS faculty members using the information extracted from this dataset. Paritioning this dataset into shards is easy, since it requires to preserve the well-formedness of XML only. Most likely, you will write a simple program to partition the dataset into an approximately equal size shards.
 
 
-##Steps to RUN on VM :
+After creating and testing this map/reduce program locally, THhe job was deploy and run on the Amazon Elastic MapReduce (EMR).
+
+## Steps to RUN on VM :
 
 - Run `sbt clean assembly` , which will run the test cases and run generate the JAR
 - Copy the jar on the machine.(Machine needs to have java 1.8)
@@ -88,6 +113,11 @@ This final output directory of the reducers is given to the Graph Visualization 
 The weights associated with the edges represent the number of times the they published together. The weights of the individual nodes represent the total number of publication of the author.
 
  [Link to GraphViz implementation to generate the DOT file from the output and present the graph](https://bitbucket.org/Iam_MohammedSiddiq/mohammed_siddiq_hw2_graphviz/src/master/)
+ 
+ 
+ 
+ ![Graph of UIC CS faculty Researchers](https://drive.google.com/file/d/10s2qEnf3xRBm78Q2qkmKgWktAP9KrC2K/view?usp=sharing "Logo Title Text 1")
+ 
  
  
  [Sample output PNG representing the individual publications and friendship graph of the UIC](https://drive.google.com/file/d/10s2qEnf3xRBm78Q2qkmKgWktAP9KrC2K/view?usp=sharing) 

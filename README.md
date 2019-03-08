@@ -37,7 +37,7 @@ After creating and testing this map/reduce program locally, THhe job was deploy 
 hadoop jar Mohammed_Siddiq_HW3-assembly-0.1.jar RelateAuthors.JobRunner path/to/input/file path/to/output/file
 ```
 
-##Steps to RUN on Cloud :
+## Steps to RUN on Cloud :
 
 - Please refer the video uploaded on youtube to run the Job in on th cloud
  

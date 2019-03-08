@@ -123,7 +123,7 @@ The weights associated with the edges represent the number of times the they pub
  
 
  
- [And Finally here's the link to the youtube video](https://youtu.be/6OFhZpm7-6U)
+ [And Finally here's the link to the youtube video demonstrating the Job running on AMAZON EMR](https://youtu.be/6OFhZpm7-6U)
  
  
 

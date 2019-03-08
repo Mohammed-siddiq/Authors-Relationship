@@ -119,11 +119,7 @@ The weights associated with the edges represent the number of times the they pub
  
  ## Graph generated representing the the entire UIC CS faculty researchers and thier work
  ![Graph of UIC CS faculty Researchers](https://github.com/Mohammed-siddiq/GraphViz-Implementation/blob/master/myoutput.png)
- 
- 
- 
- [Downlaadable PNG representing the individual publications and friendship graph of the UIC](https://github.com/Mohammed-siddiq/GraphViz-Implementation/blob/master/myoutput.png) 
- (Pro tip : Zoom in for the details.)
+(Pro tip : Download and Zoom in for the details.)
  
 
  

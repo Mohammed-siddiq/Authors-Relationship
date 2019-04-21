@@ -5,6 +5,18 @@ Created a map/reduce program for parallel processing of the [publically availabl
 
 Each entry in the dataset describes a publication, which contains the list of authors, the title, and the publication venue and a few other attributes. The file is approximately **2.5Gb**.
 
+ 
+ [![Please refer this short video for demonstration of the running project on EMR.](thumbnail.png)](https://youtu.be/6OFhZpm7-6U "Demo of the project" )
+
+ 
+Graph generated representing the the entire UIC CS faculty researchers and thier work
+
+![Graph of UIC CS faculty Researchers](https://github.com/Mohammed-siddiq/GraphViz-Implementation/blob/master/myoutput.png)
+
+ (Pro tip : Download and Zoom in for the details.)
+  
+ 
+ 
 Consider the following entry in the dataset.
 ```xml
 <inproceedings mdate="2017-05-24" key="conf/icst/GrechanikHB13">
@@ -117,13 +129,9 @@ The weights associated with the edges represent the number of times the they pub
  
  
  
- ## Graph generated representing the the entire UIC CS faculty researchers and thier work
- ![Graph of UIC CS faculty Researchers](https://github.com/Mohammed-siddiq/GraphViz-Implementation/blob/master/myoutput.png)
-(Pro tip : Download and Zoom in for the details.)
- 
 
- 
- [And Finally here's the link to the youtube video demonstrating the Job running on AMAZON EMR](https://youtu.be/6OFhZpm7-6U)
+
+
  
  
 

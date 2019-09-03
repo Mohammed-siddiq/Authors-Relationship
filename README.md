@@ -1,7 +1,7 @@
 
 ## Overview
 
-Created a map/reduce program for parallel processing of the [publically available DBLP dataset](https://dblp.uni-trier.de) that contains entries for various publications at many different venues (e.g., conferences and journals). Raw [XML-based DMBLP dataset](https://dblp.uni-trier.de/xml) is also publically available along with its schema and the documentation.
+Created a map/reduce program for parallel processing of the [publically available DBLP dataset](https://dblp.uni-trier.de) that contains entries for various publications at many different venues (e.g., conferences and journals).
 
 Each entry in the dataset describes a publication, which contains the list of authors, the title, and the publication venue and a few other attributes. The file is approximately **2.5Gb**.
 

@@ -37,7 +37,7 @@ Consider the following entry in the dataset.
 This entry lists a paper at the IEEE International Conference on Software Testing, Verification and Validation (ICST) published in 2013 whose authors are my former Ph.D. student at UIC, now tenured Associate Professor at the University of Dhaka, Dr. B.M. Mainul Hussain whose advisor Mark Grechanik is a co-author on this paper. The third co-author is Prof.Ugo Buy, a faculty member at our CS department. The presence of two authors, Mark Grechanik and Ugo Buy in a single publication like this one establishes a connection between these faculty members. Your job is to create a "friendship" connectivity graph between UIC CS faculty members using the information extracted from this dataset. Paritioning this dataset into shards is easy, since it requires to preserve the well-formedness of XML only. Most likely, you will write a simple program to partition the dataset into an approximately equal size shards.
 
 
-After creating and testing this map/reduce program locally, THhe job was deploy and run on the Amazon Elastic MapReduce (EMR).
+After creating and testing this map/reduce program locally, The job was deployed and run on the Amazon Elastic MapReduce (EMR).
 
 ## Steps to RUN on VM :
 
